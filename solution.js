@@ -58,22 +58,32 @@ class AttackSkill {
 }
 let pikachu = new Pokemon("pikachu", 120, 80);
 let bulbasaur = new Pokemon("bulbasaur", 95, 105);
+let kartana = new Pokemon("kartana", 100, 120);
 
 //Each skill should do a certain amount of damage, and consume a certain amount of magic from the Pokemon that used the skill.
 let lightning = new AttackSkill("lightning", 40, 30);
 let poisonSeed = new AttackSkill("poison seed", 20, 20);
+let RazorLeaf = new AttackSkill("Razor leaf", 50, 35);
 
 pikachu.learnAttackSkill(lightning);
 bulbasaur.learnAttackSkill(poisonSeed);
+kartana.learnAttackSkill(RazorLeaf);
 
 //The first argument to `attack` should be the index (or key) of the attack
+bulbasaur.attack();
 pikachu.attack(0, bulbasaur);
 bulbasaur.attack(0, pikachu);
 pikachu.showStatus();
 bulbasaur.showStatus();
 pikachu.attack(0, bulbasaur);
-pikachu.attack(0, bulbasaur);
+bulbasaur.showStatus();
+pikachu.showStatus();
 pikachu.attack(0, bulbasaur);
 pikachu.getMagic();
 pikachu.attack(0, bulbasaur);
-bulbasaur.attack(0, pikachu);
+bulbasaur.showStatus();
+pikachu.getMagic();
+pikachu.attack(0, bulbasaur);
+bulbasaur.attack(0, bulbasaur);
+kartana.attack(0, pikachu);
+kartana.showStatus();
